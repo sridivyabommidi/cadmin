@@ -1,0 +1,110 @@
+.moving-border {
+  position: relative;
+  
+  border: 2px dashed #e80566;
+  overflow: hidden;
+}
+
+.moving-border::before,
+.moving-border::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color:#e80566;
+  animation: border-animation 5s linear infinite;
+}
+
+.moving-border::before {
+  top: 0;
+  
+  animation-delay: 0s;
+}
+
+.moving-border::after {
+  bottom: 0;
+  
+  animation-delay: 1s;
+}
+
+
+
+
+
+@keyframes border-animation {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+
+.circulating-border {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 2px solid white;
+  overflow: hidden;
+}
+
+.circulating-border::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid red;
+  top: 0;
+  left: 0;
+  animation: circulating-animation 3s linear infinite;
+}
+
+@keyframes circulating-animation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.cscontent-wrapper{
+  height:200px;
+  display:flex;
+  overflow-y:scroll;
+  
+}
+
+
+.cscontent-wrapper::-webkit-scrollbar {
+  background-color:white;
+  border-radius: 5px;
+  width:5px;
+}
+
+.cscontent-wrapper::-webkit-scrollbar-thumb {
+  background-color: #56017f;
+  border-radius: 5px;
+  height:30px;
+  
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
